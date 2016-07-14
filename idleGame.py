@@ -1,11 +1,14 @@
 import json
 import investments
+import os
 
-myfile = open('savefile.txt')
-myCashStr= myfile.readline()
-myfile.close()
-myCash = int(myCashStr)
-
+if os.path.isfile('savefile.txt'):
+    myfile = open('savefile.txt')
+    myCashStr= myfile.readline()
+    myfile.close()
+    myCash = int(myCashStr)
+else:
+    myCash = 0
 #investments = {'lemons': 0, 'newspapers':0}
 #Q = json.dumps(investments)
 
